@@ -47,6 +47,11 @@
   resolved "https://registry.yarnpkg.com/@astrojs/internal-helpers/-/internal-helpers-0.2.1.tgz#4e2e6aabaa9819f17119aa10f413c4d6122c94cf"
   integrity sha512-06DD2ZnItMwUnH81LBLco3tWjcZ1lGU9rLCCBaeUCGYe9cI0wKyY2W3kDyoW1I6GmcWgt1fu+D1CTvz+FIKf8A==
 
+"@astrojs/internal-helpers@0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/internal-helpers/-/internal-helpers-0.4.1.tgz#ceb5de49346dbdbfb6cba1b683c07fef7df56e1c"
+  integrity sha512-bMf9jFihO8YP940uD70SI/RDzIhUHJAolWVcO1v5PUivxGKvfLZTLTVVxEYzGYyPsA3ivdLNqMnL5VgmQySa+g==
+
 "@astrojs/internal-helpers@0.4.2":
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/@astrojs/internal-helpers/-/internal-helpers-0.4.2.tgz#b8de83d84543694a7d8a7018bfd03f4cba9c4a91"
@@ -101,14 +106,17 @@
     unist-util-visit-parents "^6.0.1"
     vfile "^6.0.3"
 
-"@astrojs/netlify@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/netlify/-/netlify-3.1.1.tgz#598a73cbe4a6efe4d23575ba9b93e8ce9b3db397"
-  integrity sha512-zXApWH3uaW0/sxu75S4XfVO7xe8pmPtlGzBDFWyeceIi9u2oWgnFdVdNEnZ/bb5//+54b4y/LeL4yzL5kDjX6Q==
+"@astrojs/netlify@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/netlify/-/netlify-6.0.1.tgz#2453292ad3161eeeb64e1840f15b67f1eb4b1c9d"
+  integrity sha512-Y8rsMVClPp6cJuAClL0BAr4p8FtNtvaOhODy8YHUfe8QsaNSrnUTJ6Np+RbTBKBTQ9JkRKGe5F0f0LaAD21euw==
   dependencies:
-    "@astrojs/underscore-redirects" "^0.3.3"
-    "@netlify/functions" "^2.0.1"
-    esbuild "^0.19.5"
+    "@astrojs/internal-helpers" "0.4.1"
+    "@astrojs/underscore-redirects" "^0.4.0-alpha.0"
+    "@netlify/functions" "^2.8.0"
+    "@vercel/nft" "^0.27.6"
+    esbuild "^0.24.0"
+    vite "^6.0.2"
 
 "@astrojs/prism@3.2.0":
   version "3.2.0"
@@ -156,10 +164,10 @@
     is-wsl "^3.1.0"
     which-pm-runs "^1.1.0"
 
-"@astrojs/underscore-redirects@^0.3.3":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@astrojs/underscore-redirects/-/underscore-redirects-0.3.4.tgz#01faad774f256f2aea3e47c22c0402e426249ea4"
-  integrity sha512-vYuYtIrTwxFlDRIhuekscorsHdLL8Hr3mgOczfM1tRWVPn54dDNcKG0DmfL4DlC5YJRoqVaVdUs508Hw643NTw==
+"@astrojs/underscore-redirects@^0.4.0-alpha.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@astrojs/underscore-redirects/-/underscore-redirects-0.4.0.tgz#3b2fa7e2b4beb10bdf2641137fd6b9780f50c6ee"
+  integrity sha512-Urt32++4ql0IFTTNejnRIN7LPJ6YzU9QXLcc4RXm5or1RLPnQBKVrLvmDxKx3eT72l7ZAi6W4L5E7pcbWbYDRA==
 
 "@astrojs/vercel@^6.1.0":
   version "6.1.4"
@@ -932,7 +940,7 @@
   resolved "https://registry.yarnpkg.com/@neon-rs/load/-/load-0.0.4.tgz#2a2a3292c6f1fef043f49886712d3c96a547532e"
   integrity sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw==
 
-"@netlify/functions@^2.0.1":
+"@netlify/functions@^2.8.0":
   version "2.8.2"
   resolved "https://registry.yarnpkg.com/@netlify/functions/-/functions-2.8.2.tgz#653395b901a74a6189e913a089f9cb90083ca6ce"
   integrity sha512-DeoAQh8LuNPvBE4qsKlezjKj0PyXDryOFJfJKo3Z1qZLKzQ21sT314KQKPVjfvw6knqijj+IO+0kHXy/TJiqNA==
@@ -1369,7 +1377,7 @@
   dependencies:
     "@vercel/nft" "0.27.10"
 
-"@vercel/nft@0.27.10":
+"@vercel/nft@0.27.10", "@vercel/nft@^0.27.6":
   version "0.27.10"
   resolved "https://registry.yarnpkg.com/@vercel/nft/-/nft-0.27.10.tgz#f51c391674cdc285cdd004fa1c3822374b739eb8"
   integrity sha512-zbaF9Wp/NsZtKLE4uVmL3FyfFwlpDyuymQM1kPbeT0mVOHKDQQNjnnfslB3REg3oZprmNFJuh3pkHBk2qAaizg==
@@ -2513,7 +2521,7 @@ esbuild@0.14.47:
     esbuild-windows-64 "0.14.47"
     esbuild-windows-arm64 "0.14.47"
 
-esbuild@^0.19.5, esbuild@^0.19.6:
+esbuild@^0.19.6:
   version "0.19.12"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.19.12.tgz#dc82ee5dc79e82f5a5c3b4323a2a641827db3e04"
   integrity sha512-aARqgq8roFBj054KvQr5f1sFu0D65G+miZRCuJyJ0G13Zwx7vRar5Zhn2tkQNzIXcBrNVsv/8stehpj+GAjgbg==
@@ -2571,7 +2579,7 @@ esbuild@^0.21.5:
     "@esbuild/win32-ia32" "0.21.5"
     "@esbuild/win32-x64" "0.21.5"
 
-esbuild@^0.24.2:
+esbuild@^0.24.0, esbuild@^0.24.2:
   version "0.24.2"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.24.2.tgz#b5b55bee7de017bff5fb8a4e3e44f2ebe2c3567d"
   integrity sha512-+9egpBW8I3CD5XPe0n6BfT5fxLzxrlDzqydF3aviG+9ni1lDC/OvMHcxqEFV0+LANZG5R1bFMWfUrjVsdwxJvA==
@@ -5526,7 +5534,7 @@ vfile@^6.0.0, vfile@^6.0.3:
     "@types/unist" "^3.0.0"
     vfile-message "^4.0.0"
 
-vite@^6.0.5:
+vite@^6.0.2, vite@^6.0.5:
   version "6.0.7"
   resolved "https://registry.yarnpkg.com/vite/-/vite-6.0.7.tgz#f0f8c120733b04af52b4a1e3e7cb54eb851a799b"
   integrity sha512-RDt8r/7qx9940f8FcOIAH9PTViRrghKaK2K1jY3RaAURrEUbm9Du1mJ72G+jlhtG3WwodnfzY8ORQZbBavZEAQ==
