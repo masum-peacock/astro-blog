@@ -1,0 +1,59 @@
+---
+const { slug } = Astro.params;
+import { getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+// Import the Tags component and the MainLayout layout
+import Tags from '../../components/Tags.astro';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+// Import the formatDate function from the utils file
+import { formatDate } from '../../utils';
+
+// Define the entry variable and get the blog entry with the given slug
+export const prerender = false;
+
+if (!slug) {
+    throw new Error('Slug is required');
+}
+
+const entry: CollectionEntry<'blog'> | undefined = await getEntry('blog', slug);
+
+if (!entry) {
+    return Astro.redirect('/404');
+}
+
+const { Content } = await entry.render();
+---
+
+<MainLayout>
+    <a
+        href="/articles"
+        class="inline-block bg-gray-100 p-2 mb-6 hover:bg-indigo-500 hover:text-white"
+        >Back To Articles</a
+    >
+    <article>
+        <h1 class="text-4xl font-bold mb-2">{entry.data.title}</h1>
+        <h3 class="text-lg mb-2">
+            Written by {entry.data.author} on {formatDate(entry.data.pubDate)}
+        </h3>
+        <Tags tags={entry.data.tags} />
+        <img
+            src={'/images/' + entry.data.image}
+            alt="Article Image"
+            class="w-full h-auto rounded-xl my-6"
+        />
+        <Content />
+    </article>
+</MainLayout>
+
+<style is:global>
+    p {
+        margin: 20px 0;
+    }
+
+    h2 {
+        margin: 20px 0;
+        font-size: 1.8rem;
+    }
+</style>
