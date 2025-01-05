@@ -1,5 +1,6 @@
 import { defineConfig, envField } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import vercel from "@astrojs/vercel/serverless";
 
 import db from '@astrojs/db';
 
@@ -7,8 +8,7 @@ import db from '@astrojs/db';
 export default defineConfig({
   integrations: [tailwind(), db()],
   output: 'server',
-  db: db,
-
+  adapter: vercel(),
   env: {
     schema: {
       PUBLIC_ASTRO_DB_REMOTE_URL: envField.string({ context: "client", access: "public" }),
