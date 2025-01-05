@@ -12,11 +12,5 @@ export default defineConfig({
   integrations: [tailwind(), db()],
   output: 'server',
   // adapter: vercel(),
-  adapter: netlify(),
-  env: {
-    schema: {
-      PUBLIC_ASTRO_DB_REMOTE_URL: envField.string({ context: "client", access: "public" }),
-      PUBLIC_ASTRO_DB_APP_TOKEN: envField.string({ context: "client", access: "public" }),
-    }
-  }
+  adapter: netlify()
 });
