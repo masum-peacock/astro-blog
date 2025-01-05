@@ -14,20 +14,8 @@ const allBlogArticles: CollectionEntry<'blog'>[] = (await getCollection('blog'))
 const mostRecentArticle: CollectionEntry<'blog'> = allBlogArticles[0];
 
 const otherArticles: CollectionEntry<'blog'>[] = allBlogArticles.slice(1);
-import seed from "../../db/seed";
-import db from "../../db"
 
-try {
-  seed().then(() => {
-    console.log("Database SYNCED");
-  }).catch((error) => {
-    console.error("Error seeding database", error);
-  });
-  await db.sync();
-} catch (error) {
-  console.error(error);
-  
-}
+
 ---
 <MainLayout>
   <!-- Top Grid -->
