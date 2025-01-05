@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
-        "build": "astro build",
+        "build": "astro check && astro build",
         "preview": "astro preview",
         "astro": "astro",
         "seed": "astro seed"
@@ -16,7 +16,7 @@
         "@astrojs/netlify": "^6.0.1",
         "@astrojs/rss": "^4.0.1",
         "@astrojs/tailwind": "^5.0.3",
-        "@astrojs/vercel": "^6.1.0",
+        "@astrojs/vercel": "^8.0.1",
         "@libsql/client": "^0.14.0",
         "astro": "^5.1.2",
         "markdown-it": "^13.0.1",
@@ -27,6 +27,7 @@
     "devDependencies": {
         "@tailwindcss/typography": "^0.5.9",
         "@types/markdown-it": "^12.2.3",
-        "@types/sanitize-html": "^2.9.0"
+        "@types/mdurl": "^2.0.0",
+        "@types/sanitize-html": "^2.13.0"
     }
 }
