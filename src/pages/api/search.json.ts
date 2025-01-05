@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import { Author, db } from 'astro:db';
+// import { Author, db } from 'astro:db';
 
 export const GET: APIRoute = async ({ url }): Promise<Response> => {
     const query: string | null = url.searchParams.get('query');
@@ -42,11 +42,7 @@ export const GET: APIRoute = async ({ url }): Promise<Response> => {
         return titleMatch || bodyMatch || slugMatch;
     });
 
-    await db.insert(Author).values({
-        name: Math.random().toString(36).substring(7),
-    }).execute();
-    const result = await db.select().from(Author);
-    console.log(['RESULT'], result);
+
     return new Response(JSON.stringify(searchResults), {
         status: 200,
         headers: {
